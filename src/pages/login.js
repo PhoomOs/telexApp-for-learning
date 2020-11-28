@@ -14,9 +14,27 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import { connect } from 'react-redux';
 import { loginUser } from '../redux/actions/userActions';
 
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import { red } from '@material-ui/core/colors';
 const styles = (theme) => ({
   ...theme
 });
+const styles_login = {
+  card: {
+    position: 'relative',
+    display: 'flex',
+    marginBottom: 20
+  },
+  image: {
+    minWidth: 200
+  },
+  content: {
+    padding: 25,
+    objectFit: 'cover'
+  }
+};
 
 class login extends Component {
   constructor() {
@@ -53,9 +71,11 @@ class login extends Component {
     const { errors } = this.state;
 
     return (
-      <Grid container className={classes.form}>
+      <div>
+        <Grid container className={classes.form}>
         <Grid item sm />
         <Grid item sm>
+        <Card className={classes.card} style={{padding:50, marginTop:20, width:1000,borderRadius:30}}>
           <img src={AppIcon} alt="monkey" className={classes.image} />
           <Typography variant="h2" className={classes.pageTitle}>
             Login
@@ -103,13 +123,18 @@ class login extends Component {
               )}
             </Button>
             <br />
+            <br />
             <small>
-              dont have an account ? sign up <Link to="/signup">here</Link>
+              dont have an account ? sign up <Link to="/signup"><strong style={{color:'red'}}>here!!!</strong></Link>
             </small>
           </form>
+        </Card>
+          
         </Grid>
         <Grid item sm />
       </Grid>
+      </div>
+      
     );
   }
 }

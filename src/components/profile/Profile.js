@@ -20,7 +20,9 @@ import KeyboardReturn from '@material-ui/icons/KeyboardReturn';
 //Redux
 import { connect } from 'react-redux';
 import { logoutUser, uploadImage } from '../../redux/actions/userActions';
-
+import ControlPointTwoToneIcon from '@material-ui/icons/ControlPointTwoTone';
+import ReceiptIcon from '@material-ui/icons/Receipt';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 const styles = (theme) => ({
   ...theme
 });
@@ -51,7 +53,7 @@ class Profile extends Component {
 
     let profileMarkup = !loading ? (
       authenticated ? (
-        <Paper className={classes.paper}>
+        <Paper className={classes.paper} style={{borderRadius:20}}>
           <div className={classes.profile}>
             <div className="image-wrapper">
               <img src={profileImageUrl} alt="profile" className="profile-image" />
@@ -102,13 +104,13 @@ class Profile extends Component {
               <span>Joined {dayjs(createdAt).format('MMM YYYY')}</span>
             </div>
             <MyButton tip="Logout" onClick={this.handleLogout}>
-              <KeyboardReturn color="primary" />
+              <ExitToAppIcon color="primary" />
             </MyButton>
             <EditDetails />
           </div>
         </Paper>
       ) : (
-        <Paper className={classes.paper}>
+        <Paper className={classes.paper} style={{borderRadius:20}}>
           <Typography variant="body2" align="center">
             No profile found, please login again
           </Typography>

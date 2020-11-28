@@ -57,41 +57,49 @@ class Post extends Component {
       authenticated && userHandle === handle ? (
         <DeletePost postId={postId} />
       ) : null;
-      
+
     return (
-      <Card className={classes.card}>
-        <CardMedia
-          image={userImage}
-          title="Profile image"
-          className={classes.image}
-        />
-        <CardContent className={classes.content}>
-          <Typography
-            variant="h5"
-            component={Link}
-            to={`/users/${userHandle}`}
-            color="primary"
-          >
-            {userHandle}
-          </Typography>
-          {deleteButton}
-          <Typography variant="body2" color="textSecondary">
+      <div>
+        <Card className={classes.card} style={{ borderRadius: 20 }}>
+          <CardMedia
+            image={userImage}
+            title='Profile image'
+            className={classes.image}
+          />
+          <CardContent className={classes.content}>
+            <Typography
+              variant='h5'
+              component={Link}
+              to={`/users/${userHandle}`}
+              color='primary'
+            >
+              <strong>@{userHandle}</strong>
+            </Typography>
+
+            {deleteButton}
+
+            <Typography variant='body1'>{body}</Typography>
+            <Typography variant='body2' color='textSecondary'>
             {dayjs(createdAt).fromNow()}
           </Typography>
-          <Typography variant="body1">{body}</Typography>
-          <LikeButton postId={postId} />
-          <span>{likeCount} Likes</span>
-          <MyButton tip="comments">
-            <ChatIcon color="primary" />
-          </MyButton>
-          <span>{commentCount}comments</span>
-          <PostDialog
-            postId={postId}
-            userHandle={userHandle}
-            openDialog={this.props.openDialog}
-          />
-        </CardContent>
-      </Card>
+
+            <LikeButton postId={postId} />
+            <span>{likeCount} Likes</span>
+
+            <MyButton tip='comments'>
+              <ChatIcon color='primary' />
+            </MyButton>
+            <span>{commentCount} Comments</span>
+
+            <PostDialog
+              postId={postId}
+              userHandle={userHandle}
+              openDialog={this.props.openDialog}
+            />
+          </CardContent>
+          
+        </Card>
+      </div>
     );
   }
 }
@@ -103,7 +111,7 @@ Post.propTypes = {
   openDialog: PropTypes.bool
 };
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   user: state.user
 });
 

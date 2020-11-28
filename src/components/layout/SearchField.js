@@ -71,8 +71,8 @@ import { Link } from 'react-router-dom';
     render() {
         return (
             <div>
-                    <TextField id="outlined-basic" label="Outlined" variant="outlined"   onChange= {this.onTextChanged}/>
-                    {this.renderSuggestions()};
+                    <TextField id="outlined-basic" placeholder="Search..." variant="outlined"   onChange= {this.onTextChanged} style={{width:200, height:50}}/>
+                    {this.renderSuggestions()}
             </div>
         )
     }

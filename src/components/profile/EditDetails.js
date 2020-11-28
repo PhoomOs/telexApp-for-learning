@@ -14,7 +14,7 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 // Icons
 import EditIcon from '@material-ui/icons/Edit';
-
+import ReceiptIcon from '@material-ui/icons/Receipt';
 const styles = (theme) => ({
   ...theme,
   button: {
@@ -73,7 +73,7 @@ class EditDetails extends Component {
           onClick={this.handleOpen}
           btnClassName={classes.button}
         >
-          <EditIcon color="primary" />
+          <ReceiptIcon color="primary" />
         </MyButton>
         <Dialog
           open={this.state.open}

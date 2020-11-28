@@ -13,6 +13,9 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 // Redux stuff
 import { connect } from 'react-redux';
 import { signupUser } from '../redux/actions/userActions';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
 
 const styles = (theme) => ({
   ...theme,
@@ -22,7 +25,20 @@ const styles = (theme) => ({
     width: '380px'
   }
 });
-
+const styles_login = {
+  card: {
+    position: 'relative',
+    display: 'flex',
+    marginBottom: 20
+  },
+  image: {
+    minWidth: 200
+  },
+  content: {
+    padding: 25,
+    objectFit: 'cover'
+  }
+};
 class signup extends Component {
   constructor() {
     super();
@@ -70,6 +86,7 @@ class signup extends Component {
       <Grid container className={classes.form}>
         <Grid item sm />
         <Grid item sm>
+        <Card className={classes.card} style={{padding:50, marginTop:20, width:1000,borderRadius:30}}>
           <img src={AppIcon} alt="telex" className={classes.image} />
           <Typography variant="h2" className={classes.pageTitle}>
             SignUp
@@ -145,6 +162,8 @@ class signup extends Component {
                 {errors.general}
               </Typography>
             )}
+            <br/>
+            <br/>
             <Button
               type="submit"
               variant="contained"
@@ -152,6 +171,7 @@ class signup extends Component {
               disableElevation
               className={classes.button}
               disabled={loading}
+              
             >
               SignUp
               {loading && (
@@ -159,10 +179,12 @@ class signup extends Component {
               )}
             </Button>
             <br />
+            <br/>
             <small>
-              Already have an account ? Login <Link to="/login">here</Link>
+              Already have an account ? Login <Link to="/login"><strong style={{color:'red'}}>here!!!</strong></Link>
             </small>
           </form>
+          </Card>
         </Grid>
         <Grid item sm />
       </Grid>
