@@ -21,7 +21,7 @@ class Navbar extends Component {
     // console.log(this.props)
     const { authenticated } = this.props;
     return (
-      <AppBar elevation={0} position='static'>
+      <AppBar elevation={0}>
         <Toolbar>
           {authenticated ? (
             <Fragment>
@@ -29,7 +29,7 @@ class Navbar extends Component {
               <img
                 src='https://firebasestorage.googleapis.com/v0/b/telex-1f60c.appspot.com/o/xxxx.png?alt=media&token=28474beb-ae53-4601-88c8-562739bce3dd'
                 alt='monkey'
-                style={{ width:100, marginRight: 800 }}
+                style={{ width:90, marginRight: 840 }}
               />
               <SearchIcon style={{marginTop:10,marginRight:10}}></SearchIcon>
               <SearchField></SearchField>

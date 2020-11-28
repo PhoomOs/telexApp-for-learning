@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import withStyles from '@material-ui/core/styles/withStyles';
 import PropTypes from 'prop-types';
-import AppIcon from '../images/icon.png';
+import AppIcon from '../images/xxxxx22.png';
 import { Link } from 'react-router-dom';
 
 // MUI Stuff
@@ -76,7 +76,7 @@ class login extends Component {
         <Grid item sm />
         <Grid item sm>
         <Card className={classes.card} style={{padding:50, marginTop:20, width:1000,borderRadius:30}}>
-          <img src={AppIcon} alt="monkey" className={classes.image} />
+          <img  src={AppIcon} alt="monkey" className={classes.image} width="76" height="76"/>
           <Typography variant="h2" className={classes.pageTitle}>
             Login
           </Typography>

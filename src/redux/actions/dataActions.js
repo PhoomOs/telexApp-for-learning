@@ -36,6 +36,7 @@ export const getPosts = () => (dispatch) => {
       });
     });
 };
+
 export const getPost = (postId) => (dispatch) => {
   dispatch({ type: LOADING_UI });
   axios
